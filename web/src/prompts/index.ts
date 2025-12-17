@@ -23,6 +23,11 @@ export const GENERAL_REVIEW_PROMPT = `# General PCB Design Review
 
 You are an expert PCB design engineer reviewing a KiCad project. Analyze the provided JSON data and provide a comprehensive design review.
 
+**IMPORTANT FORMATTING**: Use proper markdown tables with pipe (|) delimiters. Tables must have:
+- Header row with pipe separators: | Column1 | Column2 | Column3 |
+- Separator row with dashes: |---------|---------|---------|
+- Data rows with pipes: | data1 | data2 | data3 |
+
 ## Instructions
 
 Review the attached PCB analysis JSON and evaluate the design across these categories:
@@ -87,6 +92,11 @@ IMPORTANT: Do NOT repeat the PCB description or JSON data in your response. Only
 export const POWER_ANALYSIS_PROMPT = `# Power Architecture Analysis
 
 You are an expert power electronics engineer reviewing the power architecture of a PCB design.
+
+**IMPORTANT FORMATTING**: Use proper markdown tables with pipe (|) delimiters. Tables must have:
+- Header row with pipe separators: | Column1 | Column2 | Column3 |
+- Separator row with dashes: |---------|---------|---------|
+- Data rows with pipes: | data1 | data2 | data3 |
 
 ## Instructions
 
@@ -171,6 +181,11 @@ IMPORTANT: Do NOT repeat the PCB description or JSON data in your response. Only
 export const SIGNAL_INTEGRITY_PROMPT = `# Signal Integrity Analysis
 
 You are an expert signal integrity engineer reviewing high-speed signal routing on a PCB.
+
+**IMPORTANT FORMATTING**: Use proper markdown tables with pipe (|) delimiters. Tables must have:
+- Header row with pipe separators: | Column1 | Column2 | Column3 |
+- Separator row with dashes: |---------|---------|---------|
+- Data rows with pipes: | data1 | data2 | data3 |
 
 ## Instructions
 
@@ -264,6 +279,11 @@ IMPORTANT: Do NOT repeat the PCB description or JSON data in your response. Only
 export const DFM_ANALYSIS_PROMPT = `# Design for Manufacturing (DFM) Analysis
 
 You are a PCB manufacturing engineer reviewing a design for manufacturability.
+
+**IMPORTANT FORMATTING**: Use proper markdown tables with pipe (|) delimiters. Tables must have:
+- Header row with pipe separators: | Column1 | Column2 | Column3 |
+- Separator row with dashes: |---------|---------|---------|
+- Data rows with pipes: | data1 | data2 | data3 |
 
 ## Instructions
 
@@ -370,6 +390,11 @@ IMPORTANT: Do NOT repeat the PCB description or JSON data in your response. Only
 export const COMPONENT_BOM_PROMPT = `# Component and BOM Analysis
 
 You are an electronics engineer reviewing the component selection and bill of materials for a PCB design.
+
+**IMPORTANT FORMATTING**: Use proper markdown tables with pipe (|) delimiters. Tables must have:
+- Header row with pipe separators: | Column1 | Column2 | Column3 |
+- Separator row with dashes: |---------|---------|---------|
+- Data rows with pipes: | data1 | data2 | data3 |
 
 ## Instructions
 
@@ -481,6 +506,11 @@ export const POWER_DELIVERY_PROMPT = `# Power Delivery Analysis
 
 You are a power electronics engineer analyzing whether a PCB's power distribution network can adequately supply all connected loads.
 
+**IMPORTANT FORMATTING**: Use proper markdown tables with pipe (|) delimiters. Tables must have:
+- Header row with pipe separators: | Column1 | Column2 | Column3 |
+- Separator row with dashes: |---------|---------|---------|
+- Data rows with pipes: | data1 | data2 | data3 |
+
 ## Instructions
 
 Using the provided PCB analysis JSON, perform a detailed power budget analysis:
@@ -554,6 +584,11 @@ IMPORTANT: Do NOT repeat the PCB description or JSON data in your response. Only
 export const EMI_ANALYSIS_PROMPT = `# EMI/EMC Analysis
 
 You are an EMC engineer reviewing a PCB design for electromagnetic interference risks and compliance considerations.
+
+**IMPORTANT FORMATTING**: Use proper markdown tables with pipe (|) delimiters. Tables must have:
+- Header row with pipe separators: | Column1 | Column2 | Column3 |
+- Separator row with dashes: |---------|---------|---------|
+- Data rows with pipes: | data1 | data2 | data3 |
 
 ## Instructions
 
@@ -641,6 +676,11 @@ IMPORTANT: Do NOT repeat the PCB description or JSON data in your response. Only
 export const OVERCURRENT_PROTECTION_PROMPT = `# Short Circuit and Overcurrent Protection Analysis
 
 You are a power systems engineer reviewing a PCB design for adequate protection against overcurrent conditions, short circuits, and fault scenarios.
+
+**IMPORTANT FORMATTING**: Use proper markdown tables with pipe (|) delimiters. Tables must have:
+- Header row with pipe separators: | Column1 | Column2 | Column3 |
+- Separator row with dashes: |---------|---------|---------|
+- Data rows with pipes: | data1 | data2 | data3 |
 
 ## Instructions
 
@@ -733,6 +773,11 @@ IMPORTANT: Do NOT repeat the PCB description or JSON data in your response. Only
 export const ESD_PROTECTION_PROMPT = `# ESD and Transient Protection Analysis
 
 You are an ESD/EMC engineer reviewing a PCB design for adequate protection against electrostatic discharge and voltage transients.
+
+**IMPORTANT FORMATTING**: Use proper markdown tables with pipe (|) delimiters. Tables must have:
+- Header row with pipe separators: | Column1 | Column2 | Column3 |
+- Separator row with dashes: |---------|---------|---------|
+- Data rows with pipes: | data1 | data2 | data3 |
 
 ## Instructions
 
@@ -832,6 +877,11 @@ export const THERMAL_ANALYSIS_PROMPT = `# Thermal Analysis and Reliability
 
 You are a thermal engineer reviewing a PCB design for heat management and long-term reliability.
 
+**IMPORTANT FORMATTING**: Use proper markdown tables with pipe (|) delimiters. Tables must have:
+- Header row with pipe separators: | Column1 | Column2 | Column3 |
+- Separator row with dashes: |---------|---------|---------|
+- Data rows with pipes: | data1 | data2 | data3 |
+
 ## Instructions
 
 Using the provided PCB analysis JSON, evaluate thermal characteristics and reliability implications:
@@ -924,6 +974,11 @@ IMPORTANT: Do NOT repeat the PCB description or JSON data in your response. Only
 export const TESTABILITY_DFA_PROMPT = `# Testability and Design for Assembly (DFA) Analysis
 
 You are a manufacturing engineer reviewing a PCB design for testability, debug access, and assembly considerations.
+
+**IMPORTANT FORMATTING**: Use proper markdown tables with pipe (|) delimiters. Tables must have:
+- Header row with pipe separators: | Column1 | Column2 | Column3 |
+- Separator row with dashes: |---------|---------|---------|
+- Data rows with pipes: | data1 | data2 | data3 |
 
 ## Instructions
 
