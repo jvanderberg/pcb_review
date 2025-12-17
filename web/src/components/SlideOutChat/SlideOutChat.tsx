@@ -72,14 +72,11 @@ export function SlideOutChat({
     }
 
     if (reviewResults.length > 0) {
-      parts.push('## Review Results Summary');
+      parts.push('## Review Results');
       for (const result of reviewResults) {
         if (!result.error && result.response) {
           parts.push(`### ${result.promptName}`);
-          const truncated = result.response.length > 2000
-            ? result.response.slice(0, 2000) + '\n\n[... truncated for context ...]'
-            : result.response;
-          parts.push(truncated);
+          parts.push(result.response);
           parts.push('');
         }
       }
