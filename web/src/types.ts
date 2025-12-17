@@ -1,6 +1,6 @@
 // Application types
 
-export type Provider = 'openai' | 'anthropic';
+export type Provider = 'openai' | 'anthropic' | 'gemini';
 export type Theme = 'auto' | 'light' | 'dark';
 export type ReviewStatus = 'idle' | 'running' | 'complete' | 'error' | 'cancelled';
 

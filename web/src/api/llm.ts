@@ -6,6 +6,7 @@
 import type { Provider, ModelOption } from '../types';
 import { callOpenAI, validateOpenAIKey, OPENAI_MODELS, type OpenAIMessage } from './openai';
 import { callAnthropic, validateAnthropicKey, ANTHROPIC_MODELS, type AnthropicMessage } from './anthropic';
+import { callGemini, validateGeminiKey, GEMINI_MODELS, type GeminiMessage } from './gemini';
 
 export interface LLMConfig {
   provider: Provider;
@@ -27,6 +28,8 @@ export function getModelsForProvider(provider: Provider): ModelOption[] {
       return OPENAI_MODELS;
     case 'anthropic':
       return ANTHROPIC_MODELS;
+    case 'gemini':
+      return GEMINI_MODELS;
     default:
       return [];
   }
@@ -41,6 +44,8 @@ export function getDefaultModel(provider: Provider): string {
       return 'gpt-4o';
     case 'anthropic':
       return 'claude-sonnet-4-20250514';
+    case 'gemini':
+      return 'gemini-2.0-flash';
     default:
       return '';
   }
@@ -59,6 +64,8 @@ export async function validateApiKey(provider: Provider, apiKey: string): Promis
       return validateOpenAIKey(apiKey);
     case 'anthropic':
       return validateAnthropicKey(apiKey);
+    case 'gemini':
+      return validateGeminiKey(apiKey);
     default:
       return false;
   }
@@ -130,6 +137,13 @@ export async function callLLM(
       return callAnthropic(apiKey, model, messages, systemPrompt, onStream, signal);
     }
 
+    case 'gemini': {
+      const messages: GeminiMessage[] = [
+        { role: 'user', parts: [{ text: userPrompt }] },
+      ];
+      return callGemini(apiKey, model, messages, systemPrompt, onStream, signal);
+    }
+
     default:
       throw new Error(`Unknown provider: ${provider}`);
   }
@@ -174,6 +188,23 @@ export async function callLLMWithHistory(
       }
 
       return callAnthropic(apiKey, model, anthropicMessages, systemPrompt, onStream);
+    }
+
+    case 'gemini': {
+      // Gemini uses 'model' instead of 'assistant' for AI responses
+      const geminiMessages: GeminiMessage[] = messages
+        .filter(m => m.role !== 'system')
+        .map(m => ({
+          role: m.role === 'assistant' ? 'model' : 'user',
+          parts: [{ text: m.content }],
+        }));
+
+      // Ensure first message is from user
+      if (geminiMessages.length > 0 && geminiMessages[0].role !== 'user') {
+        geminiMessages.unshift({ role: 'user', parts: [{ text: 'Continue.' }] });
+      }
+
+      return callGemini(apiKey, model, geminiMessages, systemPrompt, onStream);
     }
 
     default:

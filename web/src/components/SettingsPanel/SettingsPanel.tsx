@@ -100,6 +100,16 @@ export function SettingsPanel({
                 />
                 <span>Anthropic</span>
               </label>
+              <label className={styles.radioLabel}>
+                <input
+                  type="radio"
+                  name="provider"
+                  value="gemini"
+                  checked={localSettings.provider === 'gemini'}
+                  onChange={() => handleProviderChange('gemini')}
+                />
+                <span>Google Gemini</span>
+              </label>
             </div>
           </div>
 
@@ -135,7 +145,9 @@ export function SettingsPanel({
                 placeholder={
                   localSettings.provider === 'openai'
                     ? 'sk-...'
-                    : 'sk-ant-...'
+                    : localSettings.provider === 'anthropic'
+                    ? 'sk-ant-...'
+                    : 'AIza...'
                 }
               />
               <button
