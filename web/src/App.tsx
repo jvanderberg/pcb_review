@@ -10,6 +10,7 @@ import { ReviewRunner } from './components/ReviewRunner/ReviewRunner';
 import { AnalysisModal } from './components/AnalysisModal/AnalysisModal';
 import { ResultsView } from './components/ResultsView/ResultsView';
 import { SlideOutChat } from './components/SlideOutChat/SlideOutChat';
+import { HelpModal } from './components/HelpModal/HelpModal';
 import { getDefaultModel } from './api/llm';
 import { downloadMarkdown, exportAsPDF } from './utils/export';
 import type { Settings, UploadedFile, AnalysisResult, ReviewResult, LLMConfig, ReviewStatus } from './types';
@@ -42,6 +43,7 @@ export default function App() {
   }));
 
   const [showSettings, setShowSettings] = useState(false);
+  const [showHelp, setShowHelp] = useState(false);
 
   // File state
   const [pcbFile, setPcbFile] = useState<UploadedFile | null>(null);
@@ -215,6 +217,7 @@ export default function App() {
         theme={theme}
         onThemeChange={handleThemeChange}
         onSettingsClick={() => setShowSettings(true)}
+        onHelpClick={() => setShowHelp(true)}
       />
 
       <main className={styles.main}>
@@ -284,6 +287,12 @@ export default function App() {
         error={analysisError}
         onCancel={analysisStatus === 'running' ? handleCancelAnalysis : handleCloseModal}
         onViewResults={handleViewResults}
+      />
+
+      {/* Help Modal */}
+      <HelpModal
+        isOpen={showHelp}
+        onClose={() => setShowHelp(false)}
       />
     </div>
   );

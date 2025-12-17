@@ -49,7 +49,7 @@
 }
 
 .panel.open {
-  width: 400px;
+  width: 40vw;
   min-width: 320px;
 }
 
@@ -121,6 +121,7 @@
 .messages {
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: var(--spacing-md);
   display: flex;
   flex-direction: column;
@@ -195,6 +196,8 @@
   border-radius: var(--radius-md);
   font-size: var(--text-sm);
   line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .userMessage .messageContent {

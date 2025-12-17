@@ -70,7 +70,7 @@
 
 /* Executive Summary */
 .summary {
-  max-width: 900px;
+  max-width: 700px;
   margin: var(--spacing-xl) auto;
   padding: var(--spacing-xl);
   background: var(--color-bg-primary);
@@ -140,7 +140,7 @@
 
 /* Table of Contents */
 .toc {
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto var(--spacing-xl);
   padding: var(--spacing-lg);
   background: var(--color-bg-primary);
@@ -219,7 +219,7 @@
 
 /* Analysis Sections */
 .sections {
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 0 var(--spacing-md) var(--spacing-xl);
   display: flex;

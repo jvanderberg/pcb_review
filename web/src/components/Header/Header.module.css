@@ -15,7 +15,8 @@
 }
 
 .logoIcon {
-  font-size: var(--text-xl);
+  width: 64px;
+  height: 64px;
 }
 
 .logoText {
@@ -44,6 +45,7 @@
   background: var(--color-bg-tertiary);
 }
 
+.helpButton,
 .settingsButton {
   display: flex;
   align-items: center;
@@ -59,6 +61,7 @@
   transition: all var(--transition-fast);
 }
 
+.helpButton:hover,
 .settingsButton:hover {
   color: var(--color-text-primary);
   background: var(--color-bg-tertiary);

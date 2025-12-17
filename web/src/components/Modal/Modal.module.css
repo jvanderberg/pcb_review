@@ -18,7 +18,7 @@
   background: var(--color-bg-primary);
   border-radius: var(--radius-lg);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-  max-width: 800px;
+  max-width: 480px;
   width: 90%;
   max-height: 90vh;
   overflow: hidden;
@@ -59,13 +59,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--text-xl);
+  font-size: 24px;
+  line-height: 1;
   color: var(--color-text-muted);
   background: transparent;
   border: none;
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all var(--transition-fast);
+  padding: 0;
+  padding-bottom: 2px;
 }
 
 .closeButton:hover {
