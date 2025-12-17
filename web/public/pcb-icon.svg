@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background -->
+  <rect width="32" height="32" rx="4" fill="#059669"/>
+
+  <!-- Traces -->
+  <path d="M4 8h6v4h12v8h6" stroke="#34d399" stroke-width="2" stroke-linecap="round"/>
+  <path d="M4 16h4v8h8" stroke="#34d399" stroke-width="2" stroke-linecap="round"/>
+  <path d="M28 8h-4v4h-8v4" stroke="#34d399" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Vias/Pads -->
+  <circle cx="10" cy="8" r="2" fill="#fbbf24"/>
+  <circle cx="22" cy="12" r="2" fill="#fbbf24"/>
+  <circle cx="16" cy="16" r="2" fill="#fbbf24"/>
+  <circle cx="8" cy="20" r="2" fill="#fbbf24"/>
+  <circle cx="24" cy="20" r="2" fill="#fbbf24"/>
+  <circle cx="16" cy="24" r="2" fill="#fbbf24"/>
+</svg>

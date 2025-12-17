@@ -1,0 +1,54 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding: var(--spacing-lg);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.viewResultsButton {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: white;
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.viewResultsButton:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-1px);
+}
+
+/* Results layout with side chat */
+.resultsLayout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.resultsContent {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+}

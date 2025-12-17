@@ -1,0 +1,21 @@
+{
+  "name": "pcb-review",
+  "version": "1.0.0",
+  "description": "KiCad PCB/Schematic analyzer for LLM-assisted design review",
+  "module": "src/index.ts",
+  "type": "module",
+  "bin": {
+    "pcb-review": "./src/cli.ts"
+  },
+  "scripts": {
+    "analyze": "bun run src/cli.ts",
+    "build": "bun build src/cli.ts --outdir dist --target node",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
+  },
+  "keywords": ["kicad", "pcb", "schematic", "analyzer", "llm", "electronics"],
+  "license": "MIT"
+}
